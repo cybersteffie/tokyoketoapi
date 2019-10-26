@@ -1,14 +1,16 @@
+// take in dbData and create a Spot obj to throw into methods
+
 const Spot = function (dbSpot) {
-  this.id = dbSpot.id;
   this.name = dbSpot.name;
-  this.station = dbSpot.area;
-  this.type = dbSpot.category;
+  this.category = dbSpot.category;
+  this.station = dbSpot.station;
+  this.url = dbSpot.url;
 };
 
 
 module.exports = (knex) => {
   return {
-    create: require("./create")(knex, Spot),
+    create: require("./create")(knex, Spot)
     // get: require("./get")(knex, Spot)
   };
 };

@@ -1,9 +1,9 @@
 module.exports = (knex, Spot) => {
     return (params) => {
-        const name = params.name;
-        const category = params.category;
-        const station = params.station;
-        const url = params.url;
+        const spotName = params.name;
+        const spotCategory = params.category;
+        const spotStation = params.station;
+        const spotUrl = params.url;
 
         return (
             knex("spot") // spot table

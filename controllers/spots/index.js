@@ -8,17 +8,16 @@ module.exports = (models) => {
   const addSpot = (req, res) =>
     models.spot
     .create({
-      name: req.body.name,
-      area: req.body.area,
-      type: req.body.type,
-      url: req.body.url
+      "name": req.body.name,
+      "area": req.body.area,
+      "type": req.body.type,
+      "url": req.body.url
     }).then((spot) => {
+      console.log(spot);
       res.status(200).json(spot)
     }).catch((err) => {
-      res.status(400).send(err.message)
+      res.status(400).send(spot)
     })
-
-
 
   // const patchSpots = (req, res) => {
   //   models.spots
@@ -40,11 +39,12 @@ module.exports = (models) => {
   */
 
   const router = express.Router();
-  router.post("/spots", addSpot)
-  // router.get("/spots", getSpots);
-  // router.get("/spots/:id", getSpotsById);
-  // router.patch("/spots/:id", patchSpot);
-  // router.delete("/spots/:id", deleteSpot);
+
+  router.post("/tokyoketo/spots", addSpot)
+  // router.get("/tokyoketo/spots", getSpots);
+  // router.get("/tokyoketo/spots/:id", getSpotsById);
+  // router.patch("/tokyoketo/spots/:id", patchSpot);
+  // router.delete("/tokyoketo/spots/:id", deleteSpot);
 
   return router
 };
