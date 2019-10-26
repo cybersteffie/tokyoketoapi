@@ -1,16 +1,14 @@
-const moment = require("moment");
-
-const Spot = function(dbUser) {
-    this.id = spot.id;
-    this.name = spot.name;
-    this.station = spot.area;
-    this.type = spot.category;
+const Spot = function (dbSpot) {
+  this.id = dbSpot.id;
+  this.name = dbSpot.name;
+  this.station = dbSpot.area;
+  this.type = dbSpot.category;
 };
 
 
 module.exports = (knex) => {
   return {
     create: require("./create")(knex, Spot),
-    // get: require("./get")(knex, Spot),
+    // get: require("./get")(knex, Spot)
   };
 };

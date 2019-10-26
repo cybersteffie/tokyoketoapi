@@ -9,7 +9,6 @@ its polite to have them all in one place. Think of config.js as the global
 control panel for your app.
 */
 const config = require("./config");
-
 /*
 Database and other external 'services'. In general, when interfacing
 with an external API it can be helpful to separate your code into
@@ -41,8 +40,7 @@ harder to end up with circular dependencies =)
 */
 
 const apiRouter = require("./controllers")(models);
-const morgan = require("morgan"); // a popular library for logging your requests
-const bodyParser = require("body-parser"); // a middleware plugin to enable express to parse JSON
+const bodyParser = require("body-parser");
 
 // and of course, an express server =)
 const express = require("express");
@@ -66,33 +64,28 @@ https://www.safaribooksonline.com/blog/2014/03/10/express-js-middleware-demystif
 */
 
 // 1. log every request when it comes in
-app.use(morgan("dev"));
+// app.use(morgan("dev"));
 
 // 2. Set the headers for incoming requests
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
   res.header(
     "Access-Control-Allow-Methods",
-    "GET,PUT,POST,DELETE,OPTIONS,PATCH"
-  );
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept, authorization"
+    "GET,PUT,POST,DELETE,PATCH"
   );
   next();
 });
 
 // 3. Parse request bodies as json
-app.use(bodyParser.json({ type: "application/json", limit: "50mb" }));
+app.use(bodyParser.json({
+  type: "application/json",
+  limit: "50mb"
+}));
 
-// 4. If the requests begin with '/api', hand them off to the API router
-app.use("/api", apiRouter);
-app.use(express.static(`${__dirname}/public`)); // otherwise load the client app
+// 4. If the requests begin with '/tokyoketo', hand them off to the API router
+app.use("/tokyoketo", apiRouter);
+app.use(express.static(`${__dirname}/public`)); // load css
 
 // 5. Catch unhandled errors thrown by any of the previous middleware steps
-
-
-
 // eslint-disable-next-line no-unused-vars
 app.use((err, req, res, next) => {
   if (err.stack) {
@@ -109,6 +102,5 @@ app.get("/", (req, res) => {
 
 let port = 4000;
 app.listen(port, () => {
-    console.log('Server listening on port: ' + port);
+  console.log('Server listening on port: ' + port);
 });
-

@@ -16,7 +16,8 @@ exports.up = function (knex, Promise) {
             .notNullable();
 
         t.string("url")
-            .notNullable();
+            .notNullable()
+            .unique;
     });
 };
 
