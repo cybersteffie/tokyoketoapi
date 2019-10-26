@@ -3,21 +3,12 @@ const chaiHttp = require("chai-http");
 chai.use(chaiHttp);
 chai.should();
 
-const knex = require("knex")(config.db);
-const models = require("../models")(knex);
-
 describe("Pokemon API Server", () => {
 
   describe('Server', function() {
     it('should serve a basic html page', () => {
-        chai.request('http://localhost:400', (res) =>{
-            assert.equal(400);
-            done();
-        })
-    })
-    it('should serve a basic html page', () => {
-        chai.request('http://localhost:400', (res) =>{
-            assert.equal(400);
+        chai.request('http://localhost:4000', (res) =>{
+            assert.equal(4000);
             done();
         })
     })

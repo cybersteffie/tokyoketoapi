@@ -6,7 +6,7 @@
     "dev": "nodemon index.js",
     "start": "node index.js",
     "lint": "eslint --fix --ext .js .",
-    "test": "mocha tests/*.js",
+    "test": "mocha tests/tests.js",
     "migrate": "knex migrate:latest --knexfile models/knex.js",
     "rollback": "knex migrate:rollback --knexfile models/knex.js",
     "seed": "knex seed:run --knexfile models/knex.js"

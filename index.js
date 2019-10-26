@@ -90,6 +90,9 @@ app.use("/api", apiRouter);
 app.use(express.static(`${__dirname}/public`)); // otherwise load the client app
 
 // 5. Catch unhandled errors thrown by any of the previous middleware steps
+
+
+
 // eslint-disable-next-line no-unused-vars
 app.use((err, req, res, next) => {
   if (err.stack) {
