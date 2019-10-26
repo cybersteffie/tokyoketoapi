@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nodemon server.js",
-    "start": "node server.js",
+    "dev": "nodemon index.js",
+    "start": "node index.js",
     "lint": "eslint --fix --ext .js .",
     "test": "mocha tests/*.js"
   },
@@ -18,10 +18,15 @@
     "chai-http": "^4.3.0",
     "cjs": "^0.0.11",
     "express": "^4.17.1",
+    "fs": "^0.0.1-security",
     "http": "^0.0.0",
+    "knex": "^0.20.0",
     "mocha": "^6.2.2",
+    "moment": "^2.24.0",
+    "morgan": "^1.9.1",
     "node": "^12.12.0",
     "path": "^0.12.7",
+    "pg": "^7.12.1",
     "set-value": "^3.0.1"
   },
   "devDependencies": {
@@ -29,7 +34,7 @@
     "eslint-config-prettier": "^3.6.0",
     "eslint-config-problems": "^2.0.0",
     "eslint-plugin-prettier": "^3.0.1",
-    "nodemon": "^1.18.9",
+    "nodemon": "^1.19.4",
     "prettier": "^1.18.2",
     "pretty-quick": "^1.10.0"
   }
