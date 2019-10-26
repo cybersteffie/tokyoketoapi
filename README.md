@@ -20,8 +20,6 @@ in terminal,
 
 #### GET
 
-`/categories` view all categories of low carb restaurants.
-
 `/restaurants` view all low carb restaurants.
 
 `/restaurants?id=AFURI` view low carb restaurants by name.
