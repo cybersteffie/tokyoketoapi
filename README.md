@@ -10,7 +10,9 @@ in terminal,
 
 `yarn` to install dependencies.
 
-`yarn migrate` to run migrations and database setup.
+`yarn migrate` to run migrations and setup database.
+
+`yarn seed` to seed initial data from `models/seed/addSpots.js`.
 
 `yarn test` to run tests.
 
@@ -20,11 +22,11 @@ in terminal,
 
 #### GET
 
-`/restaurants` view all low carb restaurants.
+`/restaurants` access all low carb restaurants.
 
-`/restaurants?id=AFURI` view low carb restaurants by name.
+`/restaurants?id=AFURI` access low carb restaurants by name.
 
-`/restaurants?id=#` view low carb restaurants by id.
+`/restaurants?id=#` accessgit  low carb restaurants by id.
 
 #### POST
 

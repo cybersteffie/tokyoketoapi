@@ -5,12 +5,10 @@ exports.up = function (knex, Promise) {
             .index();
 
         t.string("name")
-            .unique()
             .notNullable()
             .index();
 
         t.string("category")
-            .unique()
             .notNullable()
             .index();
 

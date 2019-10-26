@@ -25,7 +25,6 @@ here. In principle, you could cut out any of these services and paste it
 into another project, and assuming your business logic is pretty similar,
 all you would have to change is the injected config.
 */
-const services = require("./services")(config);
 
 // initialize a connection to the database, and pass this
 // to the various submodules within
@@ -40,6 +39,7 @@ We use this kind of 'dependency injection' to prevent arbitrarily
 in this repo. Another benefit, if you use dependency injection its much
 harder to end up with circular dependencies =)
 */
+
 const apiRouter = require("./controllers")(models);
 const morgan = require("morgan"); // a popular library for logging your requests
 const bodyParser = require("body-parser"); // a middleware plugin to enable express to parse JSON
@@ -96,17 +96,16 @@ app.use((err, req, res, next) => {
     if (err.stack.match("node_modules/body-parser"))
       return res.status(400).send("Invalid JSON");
   }
-
-  services.logger.log(err);
   return res.status(500).send("Internal Error.");
 });
+
+const path = require('path');
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname + "/index.html"));
 });
 
-app.listen(config.express.port, () => {
-  services.logger.log(`Server up and listening on port ${config.express.port}`);
+let port = 4000;
+app.listen(port, () => {
+    console.log('Server listening on port: ' + port);
 });
-
-
 
