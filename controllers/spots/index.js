@@ -16,7 +16,7 @@ module.exports = (models) => {
       console.log(spot);
       res.status(200).json(spot)
     }).catch((err) => {
-      res.status(400).send(spot)
+      res.status(400).send(err)
     })
 
   // const patchSpots = (req, res) => {
