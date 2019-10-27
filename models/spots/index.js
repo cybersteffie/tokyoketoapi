@@ -11,6 +11,7 @@ module.exports = (knex) => {
   return {
     create: require("./create")(knex, Spot),
     patch: require("./patch")(knex, Spot),
-    delete: require("./delete")(knex, Spot)
+    delete: require("./delete")(knex, Spot),
+    get: require("./get")(knex, Spot)
   };
 };

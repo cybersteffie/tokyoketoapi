@@ -15,7 +15,7 @@ exports.seed = (knex, Promise) => {
                     url: "https://www.google.com/maps?cid=11145341133167895688"
                 },
                 {
-                    name: 'Tsur Ton Tan',
+                    name: 'Tsuru Ton Tan',
                     category: 'Udon',
                     station: 'Roppongi',
                     url: "https://www.google.com/maps?cid=6396722401939980052"

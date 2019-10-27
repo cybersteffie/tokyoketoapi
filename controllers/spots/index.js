@@ -44,16 +44,22 @@ module.exports = (models) => {
     console.log("CONTROLLER deleteSpot > req.body", req.body)
     return models.spots.delete({
       id: req.params.id,
-      name: req.body.name,
-      station: req.body.station,
-      category: req.body.category,
-      url: req.body.url
     }).then((spot) => {
       console.log("CONTROLLER deleteSpot > spot", spot)
-      console.log(spot);
       res.status(200).json(spot)
     }).catch((err) => {
       console.log("CONTROLLER deleteSpot > ERROR")
+      res.status(400).send(err)
+    })
+  }
+
+  const getSpots = (req, res) => {
+    console.log("CONTROLLER getSpots")
+    return models.spots.get().then((spots) => {
+      console.log("CONTROLLER getSpots > spots", spots)
+      res.status(200).json(spots)
+    }).catch((err) => {
+      console.log("CONTROLLER getSpots > ERROR")
       res.status(400).send(err)
     })
   }
@@ -67,7 +73,7 @@ module.exports = (models) => {
   router.post("/", addSpot);
   router.patch("/:id", patchSpot);
   router.delete("/:id", deleteSpot);
-  // router.get("/"", getSpots);
+  router.get("/", getSpots);
   // router.get("/:id", getSpotsById);
 
 
