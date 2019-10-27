@@ -54,14 +54,29 @@ module.exports = (models) => {
   }
 
   const getSpots = (req, res) => {
-    console.log("CONTROLLER getSpots")
-    return models.spots.get().then((spots) => {
-      console.log("CONTROLLER getSpots > spots", spots)
-      res.status(200).json(spots)
-    }).catch((err) => {
-      console.log("CONTROLLER getSpots > ERROR")
-      res.status(400).send(err)
-    })
+    // if name is provided
+    if (req.params.id) {
+      // pass in name to model function
+      return models.spots.get({
+          id: req.params.id
+        })
+        .then((spots) => {
+          console.log("CONTROLLER getSpots > spots", spots)
+          res.status(200).json(spots)
+        }).catch((err) => {
+          console.log("CONTROLLER getSpots > ERROR")
+          res.status(400).send(err)
+        })
+    } else {
+      return models.spots.get()
+        .then((spots) => {
+          console.log("CONTROLLER getSpots > spots", spots)
+          res.status(200).json(spots)
+        }).catch((err) => {
+          console.log("CONTROLLER getSpots > ERROR")
+          res.status(400).send(err)
+        })
+    }
   }
 
   /*
@@ -74,8 +89,7 @@ module.exports = (models) => {
   router.patch("/:id", patchSpot);
   router.delete("/:id", deleteSpot);
   router.get("/", getSpots);
-  // router.get("/:id", getSpotsById);
-
+  router.get("/:id", getSpots);
 
   return router
 };
