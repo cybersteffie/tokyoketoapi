@@ -14,31 +14,23 @@ in terminal,
 
 `yarn seed` to seed initial data from `models/seed/addSpots.js`.
 
-`yarn test` to run tests.
-
 `yarn dev` to start app and preview index.html page.
+
+`yarn test` to run tests.
 
 ## REST endpoints
 
-#### GET
+**GET** `tokyoketo/spots` access all low carb spots.
 
-`/restaurants` access all low carb restaurants.
+**GET** `tokyoketo/spots?id=AFURI` access low carb restaurants by name.
 
-`/restaurants?id=AFURI` access low carb restaurants by name.
+**GET** `tokyoketo/spots?id=#` accessgit  low carb spots by id.
 
-`/restaurants?id=#` accessgit  low carb restaurants by id.
+**POST** `tokyoketo/spots` add a new low carb spots.
 
-#### POST
+**PATCH** `tokyoketo/spots?id=#` update low carb spots with required feilds.
 
-`/restaurants` add a new low carb restaurant.
-
-#### PUT
-
-`/restaurants?id=#` update low carb restaurant with required feilds.
-
-#### DELETE
-
-`/restaurants?id=#` delete low carb restaurant by id.
+**DELETE** `tokyoketo/spots?id=#` delete low carb spots by id.
 
 ## csv data
 
