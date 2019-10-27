@@ -2,19 +2,19 @@
 
 <p align="center"><img src="/tokyoketoapi-logo.png" width="300px"></p>
 
-<p align="center">a free noncomprehensive API list of ロカボ low carb, ketogenic restaurants in tokyo, japan.</p>
+<p align="center">a free noncomprehensive API list of spots with 糖質制限・ロカボ (low carb) & ケトジェニック (ketogenic) friendly options in tokyo, japan.</p>
 
 ## setup
 
-in terminal,
+compatible with Postgres, MSSQL, MySQL, MariaDB, SQLite3, Oracle, and Amazon Redshift databases. once git repo is cloned, in terminal,
 
 `yarn` to install dependencies.
+
+`yarn dev` to start app and preview index.html @ `localhost:4000`.
 
 `yarn migrate` to run migrations and setup database.
 
 `yarn seed` to seed initial data from `models/seed/addSpots.js`.
-
-`yarn dev` to start app and preview index.html page.
 
 `yarn test` to run tests.
 
@@ -27,10 +27,6 @@ in terminal,
 **PATCH** `tokyoketo/spots/:id` update low carb spots by id.
 
 **DELETE** `tokyoketo/spots/:id` delete low carb spots by id.
-
-## csv data
-
-find and download the data in CSV format [here](https://github.com/steffieharner/tokyoketoapi/tree/master/csv).
 
 ## license
 
