@@ -6,7 +6,7 @@ module.exports = (models) => {
   */
 
   const addSpot = (req, res) => {
-    console.log(req.body)
+    console.log("CONTROLLER addSpot > req.body", req.body)
     return models.spots
       .create({
         name: req.body.name,

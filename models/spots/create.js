@@ -1,6 +1,6 @@
 module.exports = (knex, Spot) => {
     return (params) => {
-        console.log(".create", params)
+        console.log("MODELS create.js > params", params)
         const {
             name,
             category,
@@ -12,7 +12,7 @@ module.exports = (knex, Spot) => {
             knex("spots") // spot table
             .insert({
                 name,
-                cgittegory,
+                category,
                 station,
                 url
             })
