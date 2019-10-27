@@ -1,6 +1,6 @@
 <p align="center">this was created during my time as a student at code chrysalis.</p>
 
-<p align="center"><img src="/tokyoketo-logo.png" width="300px"></p>
+<p align="center"><img src="/tokyoketoapi-logo.png" width="300px"></p>
 
 <p align="center">a free noncomprehensive API list of ロカボ low carb, ketogenic restaurants in tokyo, japan.</p>
 
