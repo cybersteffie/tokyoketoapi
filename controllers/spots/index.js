@@ -5,19 +5,22 @@ module.exports = (models) => {
   Controller Logic 
   */
 
-  const addSpot = (req, res) =>
-    models.spots
-    .create({
-      name: req.body.name,
-      station: req.body.station,
-      category: req.body.category,
-      url: req.body.url
-    }).then((spot) => {
-      console.log(spot);
-      res.status(200).json(spot)
-    }).catch((err) => {
-      res.status(400).send(err)
-    })
+  const addSpot = (req, res) => {
+    console.log(req.body)
+    return models.spots
+      .create({
+        name: req.body.name,
+        station: req.body.station,
+        category: req.body.category,
+        url: req.body.url
+      }).then((spot) => {
+        console.log(spot);
+        res.status(200).json(spot)
+      }).catch((err) => {
+        console.log("WTF!")
+        res.status(400).send(err)
+      })
+  }
 
   // const patchSpots = (req, res) => {
   //   models.spots.then(() => {

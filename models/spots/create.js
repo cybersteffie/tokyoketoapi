@@ -1,5 +1,6 @@
 module.exports = (knex, Spot) => {
     return (params) => {
+        console.log(".create", params)
         const {
             name,
             category,
@@ -8,15 +9,15 @@ module.exports = (knex, Spot) => {
         } = params;
 
         return (
-            knex("spot") // spot table
+            knex("spots") // spot table
             .insert({
                 name,
-                category,
+                cgittegory,
                 station,
                 url
             })
             .then(() => {
-                return knex("spot")
+                return knex("spots")
                     .where({
                         name,
                         category,
@@ -28,6 +29,7 @@ module.exports = (knex, Spot) => {
             .then((spots) => new Spot(spots.pop()))
             // create a spot model out of the plain database response
             .catch((err) => {
+                console.log(".catch")
                 // throw unknown errors
                 return Promise.reject(err);
             })
