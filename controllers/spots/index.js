@@ -6,12 +6,12 @@ module.exports = (models) => {
   */
 
   const addSpot = (req, res) =>
-    models.spot
+    models.spots
     .create({
-      "name": req.body.name,
-      "area": req.body.area,
-      "type": req.body.type,
-      "url": req.body.url
+      name: req.body.name,
+      station: req.body.station,
+      category: req.body.category,
+      url: req.body.url
     }).then((spot) => {
       console.log(spot);
       res.status(200).json(spot)
@@ -40,11 +40,11 @@ module.exports = (models) => {
 
   const router = express.Router();
 
-  router.post("/tokyoketo/spots", addSpot)
-  // router.get("/tokyoketo/spots", getSpots);
-  // router.get("/tokyoketo/spots/:id", getSpotsById);
-  // router.patch("/tokyoketo/spots/:id", patchSpot);
-  // router.delete("/tokyoketo/spots/:id", deleteSpot);
+  router.post("/", addSpot)
+  // router.get("/"", getSpots);
+  // router.get("/:id", getSpotsById);
+  // router.patch("/:id", patchSpot);
+  // router.delete("/:id", deleteSpot);
 
   return router
 };

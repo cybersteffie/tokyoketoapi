@@ -13,15 +13,41 @@
 
 <body>
   <div class="flex-container">
-    <div id="container"></div>
-    <div id="title">
+
+    <div id="header">
       <a href="https://github.com/steffieharner/tokyoketoapi">
-        <img width="300px"
+        <img width="400px"
           src="https://camo.githubusercontent.com/ca0f8f7ff97ba7defd35c967fc1c8dad8f159ac3/68747470733a2f2f692e6962622e636f2f624b76746a4a5a2f6c6f676f2e706e67">
-      </a>
-      <br /><br />a free (incomplete) API list of restaurants or shops with ロカボ " low carb" and ketogenic options in
-      tokyo, japan </div>
+      </a><BR>
+      a free (incomplete) API list of restaurants or shops with "low carb" and ketogenic options in
+      tokyo, japan.
+    </div>
+
+    <h2>SETUP</h2>
+    <div id="body">
+      in terminal,
+
+      yarn to install dependencies.
+
+      yarn migrate to run migrations and setup database.
+
+      yarn seed to seed initial data from models/seed/addSpots.js.
+
+      yarn dev to start app and preview index.html page.
+
+      yarn test to run tests.
+    </div>
+
+    <h2>ENDPOINTS</h2>
+    <div id="body">
+      <P><B>GET</B> tokyoketo/spots access all low carb spots.</P>
+      <P><B>GET</B> tokyoketo/spots?id=# access low carb spots by id.</P>
+      <P><B>POST</B> tokyoketo/spots add a new low carb spots.</P>
+      <P><B>PATCH</B> tokyoketo/spots?id=# update low carb spots by id.</P>
+      <P><B>DELETE</B> tokyoketo/spots?id=# delete low carb spots by id.</P>
+    </div>
+
   </div>
 </body>
 
-</html>wq:
+</html>
