@@ -28,10 +28,6 @@ in terminal,
 
 **DELETE** `tokyoketo/spots/:id` delete low carb spots by id.
 
-## csv data
-
-find and download the data in CSV format [here](https://github.com/steffieharner/tokyoketoapi/tree/master/csv).
-
 ## license
 
 copywright (c) 2019 steffieharner
