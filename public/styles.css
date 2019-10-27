@@ -28,15 +28,30 @@ div {
 
 h2 {
   font-size: 25pt;
+  background-color: black;
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+b {
+  font-size: 18px;
+  font-weight: bold !important;
+  letter-spacing: -2;
+}
+
+em {
+  background-color: grey;
 }
 
 #header {
   font-size: 10pt;
   font-family: "Poppins", sans-serif;
   background-color: white;
-  padding-top: 30px;
+  padding-top: 20px;
   width: 500pt;
 }
+
 
 #body {
   font-size: 10pt;

@@ -20,19 +20,40 @@ module.exports = (models) => {
     })
 
   // const patchSpots = (req, res) => {
-  //   models.spots
-  //     .then(
-  //       const keys = ["name", "station", "type"];
+  //   models.spots.then(() => {
+  //     const keys = ["name", "station", "type"]
 
-  //       let obj = {};
-  //       for (let property in req.body) {
-  //         if (keys.includes(property)) {
-  //           obj[property] = req.body[property];
-  //         }
-  //       })
+  //     let obj = {};
+  //     for (let property in req.body) {
+  //       if (keys.includes(property)) {
+  //         obj[property] = req.body[property];
+  //       }
+  //     }
+  //   }).then((spot) => {
+  //     console.log(spot);
+  //     res.status(200).json(spot)
+  //   }).catch((err) => {
+  //     res.status(400).send(err)
+  //   })
   // }
 
-  // const deleteSpot = (req, res) => 
+  // const deleteSpot = (req, res) => {
+  //   models.spots.then(() => {
+  //     const keys = ["name", "station", "type"]
+
+  //     let obj = {};
+  //     for (let property in req.body) {
+  //       if (keys.includes(property)) {
+  //         obj[property] = req.body[property];
+  //       }
+  //     }
+  //   }).then((spot) => {
+  //     console.log(spot);
+  //     res.status(200).json(spot)
+  //   }).catch((err) => {
+  //     res.status(400).send(err)
+  //   })
+  // }
 
   /*
   Routes
