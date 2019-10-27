@@ -2,17 +2,14 @@ module.exports = (knex, Spot) => {
     return (params) => {
         console.log("MODELS delete.js > params", params)
         const {
-            name,
-            category,
-            station,
-            url
+            id
         } = params;
 
         return (
             knex("spots")
             .select()
             .where({
-                name
+                id
             })
             .delete()
             .then(() => console.log("Deleted!"))

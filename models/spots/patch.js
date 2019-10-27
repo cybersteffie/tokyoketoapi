@@ -2,6 +2,7 @@ module.exports = (knex, Spot) => {
     return (params) => {
         console.log("MODELS patch.js > params", params)
         const {
+            id,
             name,
             category,
             station,
@@ -12,7 +13,7 @@ module.exports = (knex, Spot) => {
             knex("spots")
             .select()
             .where({
-                name
+                id
             })
             .update({
                 name,
@@ -33,7 +34,7 @@ module.exports = (knex, Spot) => {
             .then((spots) => new Spot(spots.pop()))
             // create a spot model out of the plain database response
             .catch((err) => {
-                console.log(".catch")
+                console.log("MODELS patch.js > ERROR")
                 // throw unknown errors
                 return Promise.reject(err);
             })

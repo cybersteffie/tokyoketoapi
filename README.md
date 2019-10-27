@@ -22,13 +22,13 @@ in terminal,
 
 **GET** `tokyoketo/spots` access all low carb spots.
 
-**GET** `tokyoketo/spots?id=#` access low carb spots by id.
+**GET** `tokyoketo/spots/:id` access low carb spots by id.
 
 **POST** `tokyoketo/spots` add a new low carb spots.
 
-**PATCH** `tokyoketo/spots?id=#` update low carb spots by id.
+**PATCH** `tokyoketo/spots/:id` update low carb spots by id.
 
-**DELETE** `tokyoketo/spots?id=#` delete low carb spots by id.
+**DELETE** `tokyoketo/spots/:id` delete low carb spots by id.
 
 ## csv data
 
