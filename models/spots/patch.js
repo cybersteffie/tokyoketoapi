@@ -1,6 +1,6 @@
 module.exports = (knex, Spot) => {
     return (params) => {
-        console.log("MODELS create.js > params", params)
+        console.log("MODELS patch.js > params", params)
         const {
             name,
             category,
@@ -10,7 +10,11 @@ module.exports = (knex, Spot) => {
 
         return (
             knex("spots")
-            .insert({
+            .select()
+            .where({
+                name
+            })
+            .update({
                 name,
                 category,
                 station,

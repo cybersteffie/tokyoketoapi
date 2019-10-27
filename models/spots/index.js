@@ -7,10 +7,10 @@ const Spot = function (dbSpot) {
   this.url = dbSpot.url;
 };
 
-
 module.exports = (knex) => {
   return {
-    create: require("./create")(knex, Spot)
-    // get: require("./get")(knex, Spot)
+    create: require("./create")(knex, Spot),
+    patch: require("./patch")(knex, Spot),
+    delete: require("./delete")(knex, Spot)
   };
 };
