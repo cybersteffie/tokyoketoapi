@@ -2,7 +2,7 @@
 
 <p align="center"><img src="/tokyoketoapi-logo.png" width="300px"></p>
 
-<p align="center">a free noncomprehensive API list of spots with 糖質制限(reduced sugar)・ロカボ (low carb)・ケトジェニック (ketogenic) friendly options in tokyo, japan.</p>
+<p align="center">a free noncomprehensive API of spots with 糖質制限(reduced sugar)・ロカボ (low carb)・ケトジェニック (ketogenic) friendly options in tokyo, japan.</p>
 
 ## setup
 
